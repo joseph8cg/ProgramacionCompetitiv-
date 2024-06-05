@@ -1,0 +1,29 @@
+#include <iostream>
+
+bool existeSumaK(int nums[], int tam, int k) {
+    for (int i = 0; i < tam - 1; ++i) {
+        for (int j = i + 1; j < tam; ++j) {
+            if (nums[i] + nums[j] == k) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+int main() {
+    int arreglo[] = {1, 4, 6, 8, 2};
+    int tam = sizeof(arreglo) / sizeof(arreglo[0]);
+    int k = 10;
+
+    if (existeSumaK(arreglo, tam, k)) {
+        std::cout << "Si existen dos numeros en el arreglo que suman " << k << std::endl;
+    } else {
+        std::cout << "No existen dos numeros en el arreglo que sumen " << k << std::endl;
+    }
+
+    return 0;
+}
+
+SALIDA:
+Si existen dos numeros en el arreglo que suman 10
